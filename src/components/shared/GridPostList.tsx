@@ -2,9 +2,14 @@ import { useUserContext } from "@/context/AuthContext"
 import { IPostGrid } from "@/interface/post"
 import { Link } from "react-router-dom"
 import PostStats from "./post-stats"
+import { Loader } from "./loader"
 
 const GridPostList = ({ posts, showUser = true, showStats = true }: IPostGrid) => {
    const { user } = useUserContext()
+
+   if (!posts) {
+      return <Loader />
+   }
 
    return (
       <ul className="grid-container">

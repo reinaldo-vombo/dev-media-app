@@ -14,12 +14,12 @@ import { useNavigate } from "react-router-dom"
 
 export const Signup = () => {
    const { toast } = useToast()
-   const { isLoading: isUserLoading, checkAuthUser } = useUserContext()
+   const { checkAuthUser } = useUserContext()
    const navigate = useNavigate()
 
    const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCreateUserAccount()
 
-   const { mutateAsync: signInaccount, isPending: isSigningIn } = useSignInAccount()
+   const { mutateAsync: signInaccount, } = useSignInAccount()
 
    const form = useForm<z.infer<typeof singnupValidation>>({
       resolver: zodResolver(singnupValidation),

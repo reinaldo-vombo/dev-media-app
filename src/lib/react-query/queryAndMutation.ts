@@ -150,21 +150,6 @@ export const useCreatePost = () => {
      enabled: !!userId,
    });
  };
- export const useGetPosts = () => {
-   return useInfiniteQuery({
-      queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
-      queryFn: getInfinitePost,
-      getNextPageParam: (lastPage) => {
-         if(lastPage && lastPage.documents.length === 0){
-            return null 
-         } 
-
-         const lastId = lastPage?.documents[lastPage.documents.length - 1].$id;
-         
-         return lastId
-      }
-   })
- }
  
  export const useSearchPosts = (searchTerm: string) => {
    
@@ -186,6 +171,38 @@ export const useCreatePost = () => {
        queryClient.invalidateQueries({
          queryKey: [QUERY_KEYS.GET_USER_BY_ID, data?.$id],
        });
+     },
+   });
+ };
+//  export const useGetPosts = () => {
+//    return useInfiniteQuery({
+//       queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
+//       queryFn: getInfinitePost,
+//       getNextPageParam: (lastPage) => {
+//          if(lastPage && lastPage.documents.length === 0){
+//             return null 
+//          } 
+
+//          const lastId = lastPage?.documents[lastPage.documents.length - 1].$id;
+         
+//          return lastId
+//       }
+      
+//    })
+//  }
+export const useGetPosts = () => {
+   return useInfiniteQuery({
+     queryKey: [QUERY_KEYS.GET_INFINITE_POSTS],
+     queryFn: getInfinitePost as any,
+     getNextPageParam: (lastPage: any) => {
+       // If there's no data, there are no more pages.
+       if (lastPage && lastPage.documents.length === 0) {
+         return null;
+       }
+ 
+       // Use the $id of the last document as the cursor.
+       const lastId = lastPage.documents[lastPage.documents.length - 1].$id;
+       return lastId;
      },
    });
  };

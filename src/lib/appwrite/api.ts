@@ -376,7 +376,7 @@ export async function createPost(post: INewPost) {
       if (!Array.isArray(posts.documents)) {
         throw new Error('Invalid response structure');
       }
-
+      
       return posts
    } catch (error) {
      console.log(error);
