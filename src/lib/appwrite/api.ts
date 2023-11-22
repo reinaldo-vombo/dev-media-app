@@ -356,7 +356,7 @@ export async function createPost(post: INewPost) {
      console.log(error);
    }
  }
- export async function getInfinitePost({pageParam}:IGetInfinitePost) {
+ export async function getInfinitePosts({pageParam}:IGetInfinitePost) {
    const queries: any[] = [Query.orderDesc('$updatedAt'), Query.limit(10)]
 
    if(pageParam) {
