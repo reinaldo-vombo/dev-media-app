@@ -19,3 +19,8 @@ export interface INewPost  {
  export interface IPostCard {
   post: Models.Document
 }
+ export interface IPostGrid {
+  posts?: Models.Document[]
+  showUser?: boolean
+  showStats?: boolean
+}

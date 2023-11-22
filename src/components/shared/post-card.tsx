@@ -7,6 +7,7 @@ import PostStats from './post-stats'
 
 
 const PostCard = ({ post }: IPostCard) => {
+
    const { user } = useUserContext()
    return (
       <div className="post-card">

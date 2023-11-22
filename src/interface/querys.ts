@@ -3,6 +3,9 @@ export interface ISavedPost {
     userId: string
 }
 export interface IDeletePost {
-    postId: string,
+    postId?: string ,
     imageId: string
+}
+export interface IGetInfinitePost {
+    pageParam: number
 }
