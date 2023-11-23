@@ -20,7 +20,7 @@ const FileUploader = ({ fieldChange, mediaUrl }: IFileUploader) => {
    const { getRootProps, getInputProps } = useDropzone({
       onDrop,
       accept: {
-         'image/*': ['.png', 'jpeg', 'jpg', 'svg']
+         'image/*': ['.png', '.jpeg', '.jpg', '.svg']
       }
    })
    return (
@@ -33,6 +33,9 @@ const FileUploader = ({ fieldChange, mediaUrl }: IFileUploader) => {
                      <img
                         src={fileUrl}
                         alt="post image"
+                        width={50}
+                        height={50}
+                        loading='lazy'
                         className='file_uploader-img'
                      />
                   </div>
@@ -42,7 +45,7 @@ const FileUploader = ({ fieldChange, mediaUrl }: IFileUploader) => {
                </>
             ) : (
                <div className='file_uploader-box'>
-                  <img src={fileUploade} width={96} height={77} alt="file-upload" />
+                  <img src={fileUploade} width={96} height={77} loading='lazy' alt="file-upload" />
                   <h3 className='base-medium text-light-2 mb-2 mt-6'>Arrasta a foto aqui</h3>
                   <p className='text-light-4 small-regular mb-6'>SVG, PNG, JPG</p>
                   <Button className='shad-button_dark_4'>

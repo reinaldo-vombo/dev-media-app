@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Signin, Signup } from "./form/"
-import '../register.css'
 
 
 export const Register = () => {
@@ -10,7 +9,7 @@ export const Register = () => {
       setSwitchToggled(switchToggled => !switchToggled)
    }
 
-   const toggleClass = switchToggled ? 'sign-up-mode' : null
+   const toggleClass = switchToggled ? 'sign-up-mode' : ''
    return (
       <div id="page-home">
          <div className="content">
@@ -25,16 +24,16 @@ export const Register = () => {
                   <div className="panel left-panel">
                      <div className="content">
                         <h3>Eis novo aqui?</h3>
-                        <p> Para usar DevOps prencha os campos  elit. Consequatur animi, quaerat praesentium porro officiis doloremque sed dolores nihil sunt, eligendi, fugit dolore? Doloremque iste quod quos! Eaque autem in quaerat?</p>
-                        <button className='btn transparent' id='sign-up-btn' onClick={ToggleSwitch}>Sign up</button>
+                        <p> Para usar DevOps prencha os campos para criar sua conta e começe a partihar sues conteúdos sed dolores nihil sunt, </p>
+                        <button className='btn transparent' id='sign-up-btn' onClick={ToggleSwitch}>Lognin</button>
                      </div>
                      {/* <img className='image' src={background} alt="" /> */}
                   </div>
                   <div className="panel rigth-panel">
                      <div className="content">
-                        <h3>One of Us</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur animi, quaerat praesentium porro officiis doloremque sed dolores nihil sunt, eligendi, fugit dolore? Doloremque iste quod quos! Eaque autem in quaerat?</p>
-                        <button className='btn transparent' id='sign-in-btn' onClick={ToggleSwitch}>Sign in</button>
+                        <h3>Já é um de Nós</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur animi, quaerat praesentium </p>
+                        <button className='btn transparent' id='sign-in-btn' onClick={ToggleSwitch}>Registra-se</button>
                      </div>
                      {/* <img className='image' src={login_re_4vu2} alt="" /> */}
                   </div>

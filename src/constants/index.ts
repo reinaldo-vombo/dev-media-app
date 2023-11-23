@@ -14,17 +14,17 @@ export const sidebarLinks = [
   {
     imgURL: people,
     route: "/all-users",
-    label: "People",
+    label: "Útilizadores",
   },
   {
     imgURL: bookmark,
     route: "/saved",
-    label: "Saved",
+    label: "Guardados",
   },
   {
     imgURL: gallery,
     route: "/create-post",
-    label: "Create Post",
+    label: "Criar Post",
   },
 ];
 
@@ -42,7 +42,7 @@ export const bottombarLinks = [
   {
     imgURL: bookmark,
     route: "/saved",
-    label: "Saved",
+    label: "Guardados",
   },
   {
     imgURL: gallery,

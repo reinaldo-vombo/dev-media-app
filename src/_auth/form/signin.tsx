@@ -16,11 +16,11 @@ import { useNavigate } from "react-router-dom"
 export const Signin = () => {
    const { toast } = useToast()
    const { isLoading: isUserLoading, checkAuthUser } = useUserContext()
+
    const navigate = useNavigate()
 
 
-   const { mutateAsync: signInaccount } = useSignInAccount()
-
+   const { mutateAsync: signInaccount, isPending: isLoading } = useSignInAccount()
    const form = useForm<z.infer<typeof singninValidation>>({
       resolver: zodResolver(singninValidation),
       defaultValues: {
@@ -37,7 +37,11 @@ export const Signin = () => {
       })
 
       if (!session) {
-         return toast({ title: 'Falha ao registrar. Porfavor tente de novo' })
+
+         toast({ title: 'Falha ao registrar. Porfavor tente de novo' })
+         form.reset()
+
+         return
       }
       const isLoggedIn = await checkAuthUser()
 
@@ -83,12 +87,12 @@ export const Signin = () => {
                   </FormItem>
                )}
             />
-            <Button type="submit" className="shad-button_primary w-full">
-               {isUserLoading ? (
+            <Button type="submit" className="shad-button_primary w-full" disabled={isLoading}>
+               {isUserLoading || isLoading ? (
                   <div className="flex-center gap-2">
                      <Loader />  Carregando...
                   </div>
-               ) : 'Registrar'}
+               ) : 'Entrar'}
             </Button>
          </form>
       </Form>

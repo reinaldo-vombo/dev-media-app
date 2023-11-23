@@ -71,6 +71,7 @@ const PostStats = ({ post, userId }: IPostStats) => {
           alt="like"
           width={20}
           height={20}
+          loading='lazy'
           onClick={handleLikePost}
           className="cursor-pointer"
         />
@@ -84,6 +85,7 @@ const PostStats = ({ post, userId }: IPostStats) => {
             alt="share"
             width={20}
             height={20}
+            loading='lazy'
             className="cursor-pointer"
             onClick={handleSavePost}
           />

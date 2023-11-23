@@ -276,14 +276,10 @@ form a strong {
   color: #FFF;
   margin-left: -2.4rem;
 }
-a:hover {
-  background: #2FB86E;
-  transition: .5s ease-in-out;
-}
- 
+
 
 @media (max-width: 870px) {
-  .containerr {
+  .container {
     min-height: 800px;
     height: 100vh;
   }

@@ -1,17 +1,17 @@
 import * as z from "zod"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage, } from "@/components/ui/form"
+import { useCreatePost, useUpdatePost } from "@/lib/react-query/queryAndMutation"
 import { postValidation } from "@/lib/validation"
+import { useUserContext } from "@/context/AuthContext"
+import { useNavigate } from "react-router-dom"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { IPostForm } from "@/interface/postForm"
 import { Textarea } from "../ui/textarea"
 import { useForm } from "react-hook-form"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import FileUploader from "../shared/file-uploader"
-import { useCreatePost, useUpdatePost } from "@/lib/react-query/queryAndMutation"
-import { useUserContext } from "@/context/AuthContext"
 import { toast } from "../ui/use-toast"
-import { useNavigate } from "react-router-dom"
+import FileUploader from "../shared/file-uploader"
 
 const PostForm = ({ post, action }: IPostForm) => {
    const { user } = useUserContext()

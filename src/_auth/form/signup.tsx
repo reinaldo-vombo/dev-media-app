@@ -62,7 +62,7 @@ export const Signup = () => {
    return (
       <Form {...form}>
          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 sign-in-form form">
-            <div className="sm:w-420 flex-center flex-col">
+            <div className="sm:w-[420px] flex-center flex-col">
                <img src={logo} className="w-full" width={200} height={200} alt="logo" />
 
                <h2 className="h3-bold md:h2-bold pt-5 sm:pt-4">Criar uma conta nova</h2>

@@ -16,7 +16,7 @@ const GridPostList = ({ posts, showUser = true, showStats = true }: IPostGrid) =
          {posts.map((post) => (
             <li key={post.$id} className="relative min-w-80 h-80">
                <Link to={`/posts/${post.$id}`} className="grid-post_link">
-                  <img src={post.imageUrl} className="w-full h-full object-cover" alt="post" />
+                  <img src={post.imageUrl} className="w-full h-full object-cover" width={500} height={500} loading="lazy" alt="post" />
                </Link>
                <div className="grid-post_user">
                   {showUser && (

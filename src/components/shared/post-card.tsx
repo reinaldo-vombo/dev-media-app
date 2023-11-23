@@ -20,6 +20,9 @@ const PostCard = ({ post }: IPostCard) => {
                         "/assets/icons/profile-placeholder.svg"
                      }
                      alt="creator"
+                     loading='lazy'
+                     width={48}
+                     height={48}
                      className="w-12 lg:h-12 rounded-full"
                   />
                </Link>
@@ -47,6 +50,7 @@ const PostCard = ({ post }: IPostCard) => {
                <img
                   src={edite}
                   alt="edit"
+                  loading='lazy'
                   width={20}
                   height={20}
                />

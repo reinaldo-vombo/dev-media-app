@@ -19,7 +19,7 @@ const Home = () => {
       <div className="flex flex-1">
          <div className="home-container">
             <div className="home-post">
-               <h2 className="h3-bold text-left w-full md:h2-bold">Feed</h2>
+               <h2 className="h3-bold text-left w-full mb-8 md:h2-bold">Feed</h2>
                {isPostLoading && !posts ? (
                   <Loader />
                ) : (
