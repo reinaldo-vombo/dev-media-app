@@ -1,5 +1,9 @@
 # Social Media App
 
+### Deplymente
+
+1. Heres link for the app
+   git clone https://dev-media-app.vercel.app
 ![Demo Image](src/assets/register.jpeg)
 
 Build a modern social app with a stunning UI with a native mobile feel, a special tech stack, an infinite scroll feature, and amazing performance using React JS, Appwrite, TypeScript, and more..
@@ -47,3 +51,6 @@ Build a modern social app with a stunning UI with a native mobile feel, a specia
 - React.js with vite and typesript
 - Appwrite as backend service for authentication and data storage
 
+### Deplymente
+1. Heres link for the app
+   git clone https://dev-media-app.vercel.app
