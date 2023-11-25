@@ -17,7 +17,7 @@ const PostCard = ({ post }: IPostCard) => {
                   <img
                      src={
                         post.creator?.imageUrl ||
-                        "/assets/icons/profile-placeholder.svg"
+                        profilePlaceholder
                      }
                      alt="creator"
                      loading='lazy'

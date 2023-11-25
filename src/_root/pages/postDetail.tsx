@@ -23,6 +23,7 @@ const PostDetail = () => {
       (userPost) => userPost.$id !== id
    );
 
+
    const handleDeletePost = () => {
       deletePost({ postId: id, imageId: post?.imageId });
       navigate(-1);

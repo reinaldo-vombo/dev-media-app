@@ -454,3 +454,15 @@ export async function createPost(post: INewPost) {
      console.log(error);
    }
  }
+ export async function getUsers() {
+  try {
+    const users = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      [Query.orderDesc("$createdAt"), Query.limit(10)],
+    );
+    return users;
+  } catch (error) {
+    console.log('Error fetching users:', error);
+  }
+}
